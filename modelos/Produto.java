@@ -14,8 +14,8 @@ public abstract class Produto {
 
     @Override
     public String toString() {
-        return  "nome='" + nome + '\'' +
-                ", id='" + id + '\'' +
+        return  "ID ='" + id + '\'' +
+                ", nome='" + nome + '\'' +
                 ", preco=" + preco;
     }
 }

@@ -2,13 +2,13 @@ package br.com.americanas.polotech.projetolivraria.modelos;
 
 public class AlbumMusica extends Produto{
 
-    private String integrantes;
+    private String artistaOuBanda;
     private String genero;
     private String selos;
 
-    public AlbumMusica(int id, String nome, Double preco, String integrantes, String genero, String selos) {
+    public AlbumMusica(int id, String nome, Double preco, String artistaOuBanda, String genero, String selos) {
         super(id, nome, preco);
-        this.integrantes = integrantes;
+        this.artistaOuBanda = artistaOuBanda;
         this.genero = genero;
         this.selos = selos;
     }
@@ -17,7 +17,7 @@ public class AlbumMusica extends Produto{
     public String toString() {
         return "AlbumMusica{" +
                 super.toString() +
-                ", integrantes='" + integrantes + '\'' +
+                ", integrantes='" + artistaOuBanda + '\'' +
                 ", genero='" + genero + '\'' +
                 ", selos='" + selos + '\'' +
                 '}';
