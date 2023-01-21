@@ -7,7 +7,7 @@ public class Filme extends Produto{
     private String genero;
     private String produtores;
 
-    public Filme(String id, String nome, Float preco, String estudio, String diretores, String genero, String produtores) {
+    public Filme(int id, String nome, Double preco, String estudio, String diretores, String genero, String produtores) {
         super(id, nome, preco);
         this.estudio = estudio;
         this.diretores = diretores;

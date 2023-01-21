@@ -6,7 +6,7 @@ public class Livro extends Produto{
     private String escritor;
     private String editora;
 
-    public Livro (String id, String nome, Float preco, String genero, String escritor, String editora){
+    public Livro (int id, String nome, Double preco, String genero, String escritor, String editora){
         super(id, nome, preco);
         this.genero = genero;
         this.escritor = escritor;

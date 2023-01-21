@@ -6,7 +6,7 @@ public class AlbumMusica extends Produto{
     private String genero;
     private String selos;
 
-    public AlbumMusica(String id, String nome, Float preco, String integrantes, String genero, String selos) {
+    public AlbumMusica(int id, String nome, Double preco, String integrantes, String genero, String selos) {
         super(id, nome, preco);
         this.integrantes = integrantes;
         this.genero = genero;

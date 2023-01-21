@@ -4,7 +4,7 @@ public class Brinquedo extends Produto{
 
     private String tipo;
 
-    public Brinquedo(String id, String nome, Float preco, String tipo) {
+    public Brinquedo(int id, String nome, Double preco, String tipo) {
         super(id, nome, preco);
         this.tipo = tipo;
     }

@@ -2,11 +2,11 @@ package br.com.americanas.polotech.projetolivraria.modelos;
 
 public abstract class Produto {
 
-    protected String id;
+    protected int id;
     protected String nome;
-    protected Float preco;
+    protected Double preco;
 
-    public Produto(String id, String nome, Float preco) {
+    public Produto(int id, String nome, Double preco) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
