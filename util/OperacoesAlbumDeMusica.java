@@ -1,7 +1,6 @@
 package br.com.americanas.polotech.projetolivraria.util;
 
 import br.com.americanas.polotech.projetolivraria.modelos.AlbumMusica;
-import br.com.americanas.polotech.projetolivraria.modelos.Livro;
 
 import java.util.Scanner;
 

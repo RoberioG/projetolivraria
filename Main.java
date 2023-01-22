@@ -1,7 +1,5 @@
 package br.com.americanas.polotech.projetolivraria;
 
-import br.com.americanas.polotech.projetolivraria.util.Estoque;
-
 import java.util.Scanner;
 
 import static br.com.americanas.polotech.projetolivraria.util.Carrinho.menuCarrinho;
