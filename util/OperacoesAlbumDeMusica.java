@@ -1,25 +1,29 @@
 package br.com.americanas.polotech.projetolivraria.util;
 
-import br.com.americanas.polotech.projetolivraria.modelos.AlbumMusica;
+import br.com.americanas.polotech.projetolivraria.modelos.Album;
 
 import java.util.Scanner;
 
+import static br.com.americanas.polotech.projetolivraria.util.OperacoesProdutos.popularProduto;
+
 public class OperacoesAlbumDeMusica {
 
-    protected static void cadastrarAlbumMusica(Scanner scanner){
+    static Scanner scanner = new Scanner(System.in);
+    protected static void cadastrarAlbum(){
 
-        System.out.print("Digite o titulo do album: ");
-        String nome = scanner.nextLine();
-        System.out.print("Digite o preço do album: ");
-        double preco = Double.parseDouble(scanner.nextLine());
-        System.out.print("Digite o artista/banda do album: ");
-        String artistaOuBanda = scanner.nextLine();
-        System.out.print("Digite o genero do album ");
-        String genero = scanner.nextLine();
-        System.out.print("Digite os selos do album: ");
-        String selos = scanner.nextLine();
-
-        AlbumMusica album = new AlbumMusica(Estoque.gerarId, nome, preco, artistaOuBanda, genero, selos);
+        Album album = new Album();
+        popularAlbum(Estoque.gerarId, album);
         Estoque.produtos.add(album);
+    }
+
+    private static void popularAlbum(Integer id, Album album) {
+
+        popularProduto(id, album);
+        System.out.print("Digite o artista/banda do album: ");
+        album.setArtistaOuBanda(scanner.nextLine());
+        System.out.print("Digite o genero do album ");
+        album.setGenero(scanner.nextLine());
+        System.out.print("Digite os selos do album: ");
+        album.setSelos(scanner.nextLine());
     }
 }

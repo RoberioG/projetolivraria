@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static br.com.americanas.polotech.projetolivraria.util.OperacaoesLivro.*;
-import static br.com.americanas.polotech.projetolivraria.util.OperacoesAlbumDeMusica.cadastrarAlbumMusica;
+import static br.com.americanas.polotech.projetolivraria.util.OperacoesAlbumDeMusica.cadastrarAlbum;
 import static br.com.americanas.polotech.projetolivraria.util.OperacoesBrinquedo.cadastrarBrinquedo;
 import static br.com.americanas.polotech.projetolivraria.util.OperacoesFilme.cadastrarFilme;
 import static br.com.americanas.polotech.projetolivraria.util.OperacoesJogo.cadastrarJogo;
@@ -15,29 +15,13 @@ import static br.com.americanas.polotech.projetolivraria.util.OperacoesProdutos.
 
 public class Estoque {
 
-    static Integer gerarId = 6;
+    static Integer gerarId = 9;
     static List<Produto> produtos = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     public static void menuEstoque() {
 
-
-        Livro livro = new Livro(1, "A Culpa é das Estrelas", 20.50, "Conto", "Jhon Green", "Intriseca");
-        produtos.add(livro);
-
-        Filme filme = new Filme(2, "Harry Potter", 25.00, "Warnerbros", "Diretores", "Fantasia", "Produtores");
-        produtos.add(filme);
-
-        Jogo jogo = new Jogo(3, "God of War", 90.0, "Sony", "Aventura", "Santa Monica");
-        produtos.add(jogo);
-
-        AlbumMusica album = new AlbumMusica(4, "Blurryface", 50.35, "Twenty One Pilots", "Vários Generos", "Todos");
-        produtos.add(album);
-
-        Brinquedo brinquedo = new Brinquedo(5, "Bola", 20.0, "Esportivo");
-        produtos.add(brinquedo);
-
-
+        popularEstoque();
 
         do {
 
@@ -70,7 +54,6 @@ public class Estoque {
         }while (true);
     }
 
-
     public static void cadastrarProduto() {
 
         do {
@@ -84,21 +67,27 @@ public class Estoque {
                     cadastrarLivro();
                     break;
                 case 2:
-                    cadastrarJogo(scanner);
+                    cadastrarJogo();
                     break;
                 case 3:
-                    cadastrarFilme(scanner);
+                    cadastrarFilme();
                     break;
                 case 4:
-                    cadastrarAlbumMusica(scanner);
+                    cadastrarAlbum();
                     break;
                 case 5:
-                    cadastrarBrinquedo(scanner);
+                    cadastrarBrinquedo();
                     break;
                 case 0:
                     return;
             }
             gerarId++;
+
+            System.out.println("Produto cadastrado com sucesso!");
+            System.out.println("Precione enter para continuar");
+            scanner.nextLine();
+            scanner.nextLine();
+
         }while (true);
     }
 
@@ -121,7 +110,7 @@ public class Estoque {
                     listarProdutosTipo(new Filme());
                     break;
                 case 4:
-                    listarProdutosTipo(new AlbumMusica());
+                    listarProdutosTipo(new Album());
                     break;
                 case 5:
                     listarProdutosTipo(new Brinquedo());
@@ -140,7 +129,6 @@ public class Estoque {
 
     private static void editarProduto() {
 
-
         do {
             menu("Editar");
 
@@ -149,20 +137,21 @@ public class Estoque {
 
             switch (op){
                 case 1:
-                    editarLivro();
+//                    editarLivro2();
+                    editarProdutoTipo(new Livro());
                     break;
-//                case 2:
-//                    editarJogo(scanner);
-//                    break;
-//                case 3:
-//                    editarFilme(scanner);
-//                    break;
-//                case 4:
-//                    editarAlbumMusica(scanner);
-//                    break;
-//                case 5:
-//                    editarBrinquedo(scanner);
-//                    break;
+                case 2:
+                    editarProdutoTipo(new Jogo());
+                    break;
+                case 3:
+                    editarProdutoTipo(new Filme());
+                    break;
+                case 4:
+                    editarProdutoTipo(new Album());
+                    break;
+                case 5:
+                    editarProdutoTipo(new Brinquedo());
+                    break;
                 case 0:
                     return;
             }
@@ -189,7 +178,7 @@ public class Estoque {
                     apagarProdutoTipo(new Filme());
                     break;
                 case 4:
-                    apagarProdutoTipo(new AlbumMusica());
+                    apagarProdutoTipo(new Album());
                     break;
                 case 5:
                     apagarProdutoTipo(new Brinquedo());
@@ -197,6 +186,36 @@ public class Estoque {
                 case 0:
                     return;
             }
+
+            System.out.println("Produto excluido com sucesso!");
+            System.out.println("Precione enter para continuar");
+            scanner.nextLine();
+            scanner.nextLine();
         }while (true);
     }
+
+
+    private static void popularEstoque() {
+        Livro livro1 = new Livro(1, "A Culpa é das Estrelas", 20.50, 9, "Romance", "Jhon Green", "Intriseca");
+        produtos.add(livro1);
+        Livro livro2 = new Livro(2, "Batman - A Piada Mortal", 49.99, 20, "Quadrinho", "Greg Cox", "Camelot Editora");
+        produtos.add(livro2);
+        Livro livro3 = new Livro(3, "Medo Clássico - Vol. 1", 40.99, 3, "Terror", "H.P. Lovecraft", "Darkside");
+        produtos.add(livro3);
+
+        Filme filme1 = new Filme(4, "Harry Potter e A Camara Secreta", 25.00, 6, "Warnerbros", "Diretores", "Fantasia", "Produtores");
+        produtos.add(filme1);
+        Filme filme2 = new Filme(5, "Interestelar", 45.00, 3, "Warnerbros", "Christopher Nolan", " Ficção científica, Drama", "Jonathan Nolan, Christopher Nolan");
+        produtos.add(filme2);
+
+        Jogo jogo = new Jogo(6, "God of War", 90.0, 8, "Sony", "Aventura", "Santa Monica");
+        produtos.add(jogo);
+
+        Album album = new Album(7, "Blurryface", 50.35, 1, "Twenty One Pilots", "Vários Generos", "Todos");
+        produtos.add(album);
+
+        Brinquedo brinquedo = new Brinquedo(8, "Bola", 20.0, 20, "Esportivo");
+        produtos.add(brinquedo);
+    }
+
 }

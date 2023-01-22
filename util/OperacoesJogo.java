@@ -6,22 +6,24 @@ import java.util.Scanner;
 
 public class OperacoesJogo extends OperacoesProdutos {
 
-    protected static void cadastrarJogo(Scanner scanner){
+    static Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o titulo do jogo: ");
-        String nome = scanner.nextLine();
-        System.out.print("Digite o preço do jogo: ");
-        double preco = Double.parseDouble(scanner.nextLine());
-        System.out.print("Digite a distribuidora do jogo: ");
-        String distribuidora = scanner.nextLine();
-        System.out.print("Digite o genero do jogo: ");
-        String genero = scanner.nextLine();
-        System.out.print("Digite o estudio do jogo: ");
-        String estudio = scanner.nextLine();
+    protected static void cadastrarJogo(){
 
-
-        Jogo jogo = new Jogo(Estoque.gerarId, nome, preco, distribuidora, genero, estudio);
+        Jogo jogo = new Jogo();
+        popularJogo(Estoque.gerarId, jogo);
         Estoque.produtos.add(jogo);
+    }
+
+    private static void popularJogo(Integer id, Jogo jogo) {
+
+        popularProduto(id, jogo);
+        System.out.print("Digite a distribuidora do jogo: ");
+        jogo.setDistribuidora(scanner.nextLine());
+        System.out.print("Digite o genero do jogo: ");
+        jogo.setGenero(scanner.nextLine());
+        System.out.print("Digite o estudio do jogo: ");
+        jogo.setEstudio(scanner.nextLine());
     }
 
 }

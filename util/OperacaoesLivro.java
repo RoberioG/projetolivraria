@@ -6,6 +6,7 @@ import br.com.americanas.polotech.projetolivraria.modelos.Produto;
 import java.util.Scanner;
 
 import static br.com.americanas.polotech.projetolivraria.util.OperacoesProdutos.listarProdutosTipo;
+import static br.com.americanas.polotech.projetolivraria.util.OperacoesProdutos.popularProduto;
 
 
 public class OperacaoesLivro{
@@ -19,8 +20,20 @@ public class OperacaoesLivro{
         Estoque.produtos.add(livro);
     }
 
+    //POPULAR ATRIBUTOS DE UM LIVRO
+    private static void popularLivro(Integer id, Livro livro) {
+
+        popularProduto(id, livro);
+        System.out.print("Digite o genero do livro: ");
+        livro.setGenero(scanner.nextLine());
+        System.out.print("Digite o escritor do livro: ");
+        livro.setEscritor(scanner.nextLine());
+        System.out.print("Digite a editora do livro: ");
+        livro.setEditora(scanner.nextLine());
+    }
+
     //EDIÇÃO DE LIVROS
-    protected static void editarLivro(){
+    protected static void editarLivro2(){
 
         System.out.println("########### EDITAR PRODUTOS ###########");
 
@@ -76,22 +89,5 @@ public class OperacaoesLivro{
                     return;
             }
         }while (true);
-    }
-
-    //POPULAR ATRIBUTOS DE UM LIVRO
-    private static void popularLivro(Integer id, Livro livro) {
-
-        System.out.println();
-        livro.setId(id);
-        System.out.print("Digite o titulo do livro: ");
-        livro.setNome(scanner.nextLine());
-        System.out.print("Digite o preço do livro: ");
-        livro.setPreco(Double.parseDouble(scanner.nextLine()));
-        System.out.print("Digite o genero do livro: ");
-        livro.setGenero(scanner.nextLine());
-        System.out.print("Digite o escritor do livro: ");
-        livro.setEscritor(scanner.nextLine());
-        System.out.print("Digite a editora do livro: ");
-        livro.setEditora(scanner.nextLine());
     }
 }

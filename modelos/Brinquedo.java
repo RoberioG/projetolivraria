@@ -4,8 +4,8 @@ public class Brinquedo extends Produto{
 
     private String tipo;
 
-    public Brinquedo(int id, String nome, Double preco, String tipo) {
-        super(id, nome, preco);
+    public Brinquedo(int id, String nome, Double preco, Integer quantidade, String tipo) {
+        super(id, nome, preco, quantidade);
         this.tipo = tipo;
     }
 
@@ -19,5 +19,9 @@ public class Brinquedo extends Produto{
                 super.toString() +
                 ", tipo='" + tipo + '\'' +
                 '}';
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

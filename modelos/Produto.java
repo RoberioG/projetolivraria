@@ -5,11 +5,13 @@ public abstract class Produto {
     protected Integer id;
     protected String nome;
     protected Double preco;
+    protected Integer quantidade;
 
-    public Produto(Integer id, String nome, Double preco) {
+    public Produto(Integer id, String nome, Double preco, Integer quantidade) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
+        this.quantidade = quantidade;
     }
 
     public Produto() {
@@ -20,7 +22,8 @@ public abstract class Produto {
     public String toString() {
         return  "ID ='" + id + '\'' +
                 ", nome='" + nome + '\'' +
-                ", preco=" + preco;
+                ", preco='" + preco + '\'' +
+                ", quantidade=" + quantidade;
     }
 
     public int getId() {
@@ -37,5 +40,9 @@ public abstract class Produto {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
     }
 }

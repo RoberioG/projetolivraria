@@ -7,8 +7,8 @@ public class Filme extends Produto{
     private String genero;
     private String produtores;
 
-    public Filme(int id, String nome, Double preco, String estudio, String diretores, String genero, String produtores) {
-        super(id, nome, preco);
+    public Filme(int id, String nome, Double preco, Integer quantidade, String estudio, String diretores, String genero, String produtores) {
+        super(id, nome, preco, quantidade);
         this.estudio = estudio;
         this.diretores = diretores;
         this.genero = genero;
@@ -19,6 +19,7 @@ public class Filme extends Produto{
 
     }
 
+
     @Override
     public String toString() {
         return "Filme{" +
@@ -28,5 +29,21 @@ public class Filme extends Produto{
                 ", genero='" + genero + '\'' +
                 ", produtores='" + produtores + '\'' +
                 '}';
+    }
+
+    public void setEstudio(String estudio) {
+        this.estudio = estudio;
+    }
+
+    public void setDiretores(String diretores) {
+        this.diretores = diretores;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setProdutores(String produtores) {
+        this.produtores = produtores;
     }
 }
