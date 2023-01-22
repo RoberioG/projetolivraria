@@ -1,5 +1,6 @@
 package br.com.americanas.polotech.projetolivraria.util;
 
+import br.com.americanas.polotech.projetolivraria.modelos.AlbumMusica;
 import br.com.americanas.polotech.projetolivraria.modelos.Filme;
 
 import java.util.Scanner;
@@ -23,6 +24,10 @@ public class OperacoesFilme {
 
         Filme filme = new Filme(Estoque.gerarId, nome, preco, estudio, diretores, genero, produtores);
         Estoque.produtos.add(filme);
+    }
+
+    protected static void listarFilmes(){
+        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(Filme.class)).toList().forEach(produto -> System.out.println(produto.toString()));
     }
 
 }

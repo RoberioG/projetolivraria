@@ -1,6 +1,7 @@
 package br.com.americanas.polotech.projetolivraria.util;
 
 import br.com.americanas.polotech.projetolivraria.modelos.AlbumMusica;
+import br.com.americanas.polotech.projetolivraria.modelos.Livro;
 
 import java.util.Scanner;
 
@@ -21,5 +22,9 @@ public class OperacoesAlbumDeMusica {
 
         AlbumMusica album = new AlbumMusica(Estoque.gerarId, nome, preco, artistaOuBanda, genero, selos);
         Estoque.produtos.add(album);
+    }
+
+    protected static void listarAlbumMusicas(){
+        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(AlbumMusica.class)).toList().forEach(produto -> System.out.println(produto.toString()));
     }
 }

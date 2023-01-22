@@ -1,5 +1,6 @@
 package br.com.americanas.polotech.projetolivraria.util;
 
+import br.com.americanas.polotech.projetolivraria.modelos.AlbumMusica;
 import br.com.americanas.polotech.projetolivraria.modelos.Jogo;
 
 import java.util.Scanner;
@@ -22,5 +23,9 @@ public class OperacoesJogo {
 
         Jogo jogo = new Jogo(Estoque.gerarId, nome, preco, distribuidora, genero, estudio);
         Estoque.produtos.add(jogo);
+    }
+
+    protected static void listarJogos(){
+        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(Jogo.class)).toList().forEach(produto -> System.out.println(produto.toString()));
     }
 }

@@ -13,6 +13,10 @@ public class Livro extends Produto{
         this.editora = editora;
     }
 
+    public Livro() {
+        super();
+    }
+
     @Override
     public String toString() {
         return "Livro{ " +
@@ -21,5 +25,17 @@ public class Livro extends Produto{
                 ", escritor='" + escritor + '\'' +
                 ", editora='" + editora + '\'' +
                 '}';
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setEscritor(String escritor) {
+        this.escritor = escritor;
+    }
+
+    public void setEditora(String editora) {
+        this.editora = editora;
     }
 }
