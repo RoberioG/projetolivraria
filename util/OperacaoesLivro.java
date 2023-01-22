@@ -28,7 +28,7 @@ public class OperacaoesLivro{
 
         listarLivros();
         System.out.print("Digite o ID do livro que deseja editar: ");
-        Integer idSelecionado = Integer.parseInt(scanner.nextLine());
+        int idSelecionado = Integer.parseInt(scanner.nextLine());
 
         Livro livroEditar = new Livro();
         for (Produto produto : Estoque.produtos) {
@@ -36,9 +36,6 @@ public class OperacaoesLivro{
                 livroEditar = (Livro) produto;
             }
         }
-
-
-        System.out.println("LIVRO PARA EDITAR >>>" + livroEditar.toString());
 
         do {
             System.out.println("1 - Todos");
@@ -88,7 +85,7 @@ public class OperacaoesLivro{
 
         listarLivros();
         System.out.print("Digite o ID do livro que deseja apagar: ");
-        Integer idSelecionado = Integer.parseInt(scanner.nextLine());
+        int idSelecionado = Integer.parseInt(scanner.nextLine());
 
         Livro livroApagar = new Livro();
         for (Produto produto : Estoque.produtos) {
