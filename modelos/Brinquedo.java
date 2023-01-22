@@ -9,6 +9,10 @@ public class Brinquedo extends Produto{
         this.tipo = tipo;
     }
 
+    public Brinquedo() {
+
+    }
+
     @Override
     public String toString() {
         return "Brinquedo{" +

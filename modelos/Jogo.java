@@ -13,6 +13,10 @@ public class Jogo extends Produto{
         this.estudio = estudio;
     }
 
+    public Jogo() {
+
+    }
+
     @Override
     public String toString() {
         return "Jogo{" +

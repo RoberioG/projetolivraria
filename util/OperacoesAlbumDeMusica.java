@@ -23,8 +23,4 @@ public class OperacoesAlbumDeMusica {
         AlbumMusica album = new AlbumMusica(Estoque.gerarId, nome, preco, artistaOuBanda, genero, selos);
         Estoque.produtos.add(album);
     }
-
-    protected static void listarAlbumMusicas(){
-        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(AlbumMusica.class)).toList().forEach(produto -> System.out.println(produto.toString()));
-    }
 }

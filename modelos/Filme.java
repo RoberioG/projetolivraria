@@ -15,6 +15,10 @@ public class Filme extends Produto{
         this.produtores = produtores;
     }
 
+    public Filme() {
+
+    }
+
     @Override
     public String toString() {
         return "Filme{" +

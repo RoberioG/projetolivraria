@@ -5,7 +5,7 @@ import br.com.americanas.polotech.projetolivraria.modelos.Jogo;
 
 import java.util.Scanner;
 
-public class OperacoesJogo {
+public class OperacoesJogo extends OperacoesProdutos {
 
     protected static void cadastrarJogo(Scanner scanner){
 
@@ -25,7 +25,4 @@ public class OperacoesJogo {
         Estoque.produtos.add(jogo);
     }
 
-    protected static void listarJogos(){
-        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(Jogo.class)).toList().forEach(produto -> System.out.println(produto.toString()));
-    }
 }

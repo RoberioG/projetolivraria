@@ -13,6 +13,10 @@ public class AlbumMusica extends Produto{
         this.selos = selos;
     }
 
+    public AlbumMusica() {
+
+    }
+
     @Override
     public String toString() {
         return "AlbumMusica{" +

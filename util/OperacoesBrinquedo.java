@@ -19,8 +19,4 @@ public class OperacoesBrinquedo {
         Brinquedo brinquedo = new Brinquedo(Estoque.gerarId, nome, preco, tipo);
         Estoque.produtos.add(brinquedo);
     }
-
-    protected static void listarBrinquedos(){
-        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(Brinquedo.class)).toList().forEach(produto -> System.out.println(produto.toString()));
-    }
 }

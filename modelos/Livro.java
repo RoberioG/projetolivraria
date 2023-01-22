@@ -14,7 +14,7 @@ public class Livro extends Produto{
     }
 
     public Livro() {
-        super();
+
     }
 
     @Override

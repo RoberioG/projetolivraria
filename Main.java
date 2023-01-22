@@ -11,11 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        boolean continuar = true;
-
-        System.out.println("Bem vindo ao painel de controle da biblioteca.");
 
         do {
+            System.out.println("########### SISTEMA DE GERENCIAMENTO DA BIBLIOTECA ###########\n");
             System.out.println("1 - Ir para estoque");
             System.out.println("2 - Ir para carrinho");
             System.out.println("0 - Sair da aplicação");
@@ -31,14 +29,12 @@ public class Main {
                     menuCarrinho();
                     break;
                 case 0:
-                    continuar = false;
-                    break;
+                    return;
                 default:
                     System.out.println("Opção inválida, selecione um valor válido");
                     System.out.println();
             }
-
-        }while (continuar);
+        }while (true);
 
     }
 }

@@ -26,8 +26,4 @@ public class OperacoesFilme {
         Estoque.produtos.add(filme);
     }
 
-    protected static void listarFilmes(){
-        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(Filme.class)).toList().forEach(produto -> System.out.println(produto.toString()));
-    }
-
 }

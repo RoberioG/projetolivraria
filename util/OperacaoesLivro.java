@@ -5,6 +5,9 @@ import br.com.americanas.polotech.projetolivraria.modelos.Produto;
 
 import java.util.Scanner;
 
+import static br.com.americanas.polotech.projetolivraria.util.OperacoesProdutos.listarProdutosTipo;
+
+
 public class OperacaoesLivro{
 
     static Scanner scanner = new Scanner(System.in);
@@ -16,17 +19,12 @@ public class OperacaoesLivro{
         Estoque.produtos.add(livro);
     }
 
-    //LISTAGEM DE LIVROS
-    protected static void listarLivros(){
-        Estoque.produtos.stream().filter(produto -> produto.getClass().equals(Livro.class)).toList().forEach(produto -> System.out.println(produto.toString()));
-    }
-
     //EDIÇÃO DE LIVROS
     protected static void editarLivro(){
 
         System.out.println("########### EDITAR PRODUTOS ###########");
 
-        listarLivros();
+        listarProdutosTipo(new Livro());
         System.out.print("Digite o ID do livro que deseja editar: ");
         int idSelecionado = Integer.parseInt(scanner.nextLine());
 
@@ -80,25 +78,10 @@ public class OperacaoesLivro{
         }while (true);
     }
 
-    protected static void apagarLivro(){
-        System.out.println("########### APAGAR LIVRO ###########");
-
-        listarLivros();
-        System.out.print("Digite o ID do livro que deseja apagar: ");
-        int idSelecionado = Integer.parseInt(scanner.nextLine());
-
-        Livro livroApagar = new Livro();
-        for (Produto produto : Estoque.produtos) {
-            if (produto.getId() == idSelecionado){
-                livroApagar = (Livro) produto;
-            }
-        }
-        Estoque.produtos.remove(livroApagar);
-    }
-
     //POPULAR ATRIBUTOS DE UM LIVRO
     private static void popularLivro(Integer id, Livro livro) {
 
+        System.out.println();
         livro.setId(id);
         System.out.print("Digite o titulo do livro: ");
         livro.setNome(scanner.nextLine());
